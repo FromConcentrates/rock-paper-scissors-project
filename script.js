@@ -5,7 +5,7 @@ getComputerChoice will randomly return one of the following
 values: "rock," "paper," or "scissors"
 
 Function is named getComputerChoice
-Parameter of the function is "turn"
+Local variable of the function is "turn"
 Turn is equal to Math.random(), which returns a random number between 0 and 1.
 If turn is greater than or equal to zero but less than one third, return rock
 Else If turn is greater than or equal to one third, but less than two thirds, return paper
@@ -28,12 +28,6 @@ getComputerChoice();
 /*Step 3: Write the logic to get the human choice
 Your game will be played by a human player. You will write a function that takes the user choice and returns it.
 
-Create a new function named getHumanChoice.
-Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
-Hint: Use the prompt method to get the user’s input.
-You do not need to handle reprompting if the user enters an invalid input, as that would require things we will teach later. For now, just assume the user will always enter a valid choice.
-Test what your function returns by using console.log.
-
 The function is named getHumanChoice
 The function is a prompt with the format result = prompt(title, [default]);
 The function will return a 'choice' depending on user input of 'rock', 'paper' or 'scissors'
@@ -46,6 +40,35 @@ function getHumanChoice() {
 
 }
 console.log(getHumanChoice());
+
+/*Step 4: Declare the players score variables
+Your game will keep track of the players score. You will write variables to keep track of the players score.
+
+Create two new variables named humanScore and computerScore in the global scope.
+Initialize those variables with the value of 0. */
+
+let humanScore = 0;
+let computerScore = 0;
+
+/* Step 5: Write the logic to play a single round
+Your game will be played round by round. You will write a function that takes
+the human and computer player choices as arguments, plays a single round, increments the round 
+ winner’s score and logs a winner announcement.
+
+Create a new function named playRound.
+Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to
+take the human and computer choices as arguments.
+Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”,
+or other variations.
+Write the code for your playRound function to console.log a string value representing the round winner,
+Such as: “You lose! Paper beats Rock”.
+Increment the humanScore or computerScore variable based on the round winner. 
+
+Pseudocode: 
+The game is played in rounds. 
+The human and the computer each play a choice as arguments. This is a single round.
+The round winner's score (variable) is incremented
+A winner's accouncement is logged
 
 
 
