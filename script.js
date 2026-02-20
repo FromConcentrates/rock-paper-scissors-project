@@ -41,11 +41,11 @@ The title is a greeting to the user, and the default will include 'rock,' 'paper
 */
 
 function getHumanChoice() {
-    choice = prompt("Do you choose Rock, Paper, or Sciossors?", 'Ex: Rock');
-    alert(`You chose ${choice}!`);
+    choice = prompt("Do you choose Rock, Paper, or Sciossors?", 'Ex: Scissors');
+    return choice;
 
 }
-getHumanChoice();
+console.log(getHumanChoice());
 
 
 
