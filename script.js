@@ -1,5 +1,3 @@
-console.log("Hello World")
-
 /* Create a function named getComputerChoice
 getComputerChoice will randomly return one of the following
 values: "rock," "paper," or "scissors"
@@ -15,12 +13,12 @@ Else If If turn is greater than or equal to two thirds, but less than or equal t
 function getComputerChoice() {
     turn = Math.random();
     if (turn < (1/3)) { // removed redundant condition (turn >= 0) since Math.random() never returns a negative number
-        console.log('rock');
+        return ('rock');
     } else if (turn < (2/3)) {
-        console.log('paper');
+        return ('paper');
 // Else if with conditions isn't necessary here because it's the only other option
     } else {
-        console.log('scissors'); 
+        return ('scissors'); 
     }
 }
 getComputerChoice();
@@ -35,11 +33,10 @@ The title is a greeting to the user, and the default will include 'rock,' 'paper
 */
 
 function getHumanChoice() {
-    choice = prompt("Do you choose Rock, Paper, or Sciossors?", 'Ex: Scissors');
+    choice = prompt("Do you choose Rock, Paper, or Scissors?", 'Ex: Scissors');
     return choice;
 
 }
-console.log(getHumanChoice());
 
 /*Step 4: Declare the players score variables
 Your game will keep track of the players score. You will write variables to keep track of the players score.
@@ -49,6 +46,43 @@ Initialize those variables with the value of 0. */
 
 let humanScore = 0;
 let computerScore = 0;
+
+function playRound(humanChoice, computerChoice) {
+    humanChoice = humanChoice.toLowerCase();
+    if (humanChoice ==='paper' && computerChoice ==='rock') {
+        console.log('Paper covers rock; the Human wins!');
+        ++humanScore;
+    }
+    else if (humanChoice === 'rock' && computerChoice === 'scissors') {
+        console.log('Rock crushes scissors; the Human wins!');
+        ++humanScore;
+    }
+    else if (humanChoice === 'scissors' && computerChoice === 'paper') {
+        console.log('Scissors cut paper; the Human wins!');
+        ++humanScore;
+    }
+    else if (computerChoice === 'paper' && humanChoice === 'rock') {
+        console.log('Paper covers rock; the Computer wins!');
+        ++computerScore;
+    }
+    else if (computerChoice === 'rock' && humanChoice === 'scissors') {
+        console.log('Rock crushes scissors; the Computer wins!');
+        ++computerScore;
+    }
+    else if (computerChoice === 'scissors' && humanChoice === 'paper') {
+        console.log ('Scissors cut paper; the Computer wins!');
+        ++computerScore;
+    }
+    else { console.log('This round is a tie');
+    }
+    }
+    
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
 
 /* Step 5: Write the logic to play a single round
 Your game will be played round by round. You will write a function that takes
@@ -68,7 +102,11 @@ Pseudocode:
 The game is played in rounds. 
 The human and the computer each play a choice as arguments. This is a single round.
 The round winner's score (variable) is incremented
-A winner's accouncement is logged
+A winner's accouncement is logged to the console
 
+If the computer wins the round, the computer's score is incremented by one
+Else if the human wins the round, the human's score is incremented by one
+Else the round is a tie and neither score is incremented by one.
+*/
 
 
