@@ -6,11 +6,9 @@ values: "rock," "paper," or "scissors"
 */
 
 
-
-
-function getComputerChoice(play) {
-    play = Math.random()
-    if (play < .5) console.log(('rock'))
+function getComputerChoice(turn) {
+    turn = Math.random()
+    if (turn < .5) console.log(('rock'))
         else alert('no')
 }
 
