@@ -125,6 +125,18 @@ Compare computer and human scores
 If computer score is greater than human score, declare computer the winner
 If human score is greater than computer score, declare human the winner
 */
+const mainDiv = document.querySelector("div");
+
+    function Score() {
+            if (humanScore > computerScore) {
+        console.log('The human wins!');
+    }
+    else if (computerScore > humanScore) {
+        console.log('The computer wins!');
+    }
+    else {
+        console.log('It is a tie')}
+    } 
 
 function playGame() {
 /*
@@ -154,41 +166,24 @@ function playGame() {
 
     rockBtn.addEventListener('click', function() {
     playRound('rock', getComputerChoice());
-
-    if (humanScore > computerScore) {
-        console.log('The human wins!');
-    }
-    else if (computerScore > humanScore) {
-        console.log('The computer wins!');
-    }
-    else {
-        console.log('It is a tie')}
+    Score(); 
     } )
+
+    mainDiv.appendChild(rockBtn);
 
     paperBtn.addEventListener('click', function() {
         playRound('paper', getComputerChoice());
-    
-    if (humanScore > computerScore) {
-        console.log('The human wins!');
-    }
-    else if (computerScore > humanScore) {
-        console.log('The computer wins!');
-    }
-    else {
-        console.log('It is a tie')}   
+        Score();
     })
+
+    mainDiv.appendChild(paperBtn);
 
     scissorsBtn.addEventListener('click', function() {
         playRound('scissors', getComputerChoice());
-
-    if (humanScore > computerScore) {
-        console.log('The human wins!');
-    }
-    else if (computerScore > humanScore) {
-        console.log('The computer wins!');
-    }
-    else {
-        console.log('It is a tie')}
+        Score();
     })
+
+    mainDiv.appendChild(scissorsBtn);
 }
+
 playGame();
