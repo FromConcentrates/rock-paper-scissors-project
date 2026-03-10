@@ -47,95 +47,50 @@ Initialize those variables with the value of 0. */
 let humanScore = 0;
 let computerScore = 0;
 
-/* Step 5: Write the logic to play a single round
-Your game will be played round by round. You will write a function that takes
-the human and computer player choices as arguments, plays a single round, increments the round 
- winner’s score and logs a winner announcement.
-
-Create a new function named playRound.
-Define two parameters for playRound: humanChoice and computerChoice. Use these two parameters to
-take the human and computer choices as arguments.
-Make your function’s humanChoice parameter case-insensitive so that players can input “rock”, “ROCK”, “RocK”,
-or other variations.
-Write the code for your playRound function to console.log a string value representing the round winner,
-Such as: “You lose! Paper beats Rock”.
-Increment the humanScore or computerScore variable based on the round winner. 
-
-Pseudocode: 
-The game is played in rounds. 
-The human and the computer each play a choice as arguments. This is a single round.
-The round winner's score (variable) is incremented
-A winner's accouncement is logged to the console
-
-If the computer wins the round, the computer's score is incremented by one
-Else if the human wins the round, the human's score is incremented by one
-Else the round is a tie and neither score is incremented by one.
-*/
 
 function playRound(humanChoice, computerChoice) {
     humanChoice = humanChoice.toLowerCase();
     if (humanChoice ==='paper' && computerChoice ==='rock') {
-        console.log('Paper covers rock; the Human wins!');
+        mainDiv.textContent = 'Paper covers rock; the Human wins!';
         ++humanScore;
     }
     else if (humanChoice === 'rock' && computerChoice === 'scissors') {
-        console.log('Rock crushes scissors; the Human wins!');
+        mainDiv.textContent ='Rock crushes scissors; the Human wins!';
         ++humanScore;
     }
     else if (humanChoice === 'scissors' && computerChoice === 'paper') {
-        console.log('Scissors cut paper; the Human wins!');
+        mainDiv.textContent = 'Scissors cut paper; the Human wins!';
         ++humanScore;
     }
     else if (computerChoice === 'paper' && humanChoice === 'rock') {
-        console.log('Paper covers rock; the Computer wins!');
+        mainDiv.textContent = 'Paper covers rock; the Computer wins!';
         ++computerScore;
     }
     else if (computerChoice === 'rock' && humanChoice === 'scissors') {
-        console.log('Rock crushes scissors; the Computer wins!');
+        mainDiv.textContent = 'Rock crushes scissors; the Computer wins!';
         ++computerScore;
     }
     else if (computerChoice === 'scissors' && humanChoice === 'paper') {
-        console.log ('Scissors cut paper; the Computer wins!');
+        mainDiv.textContent = 'Scissors cut paper; the Computer wins!';
         ++computerScore;
     }
-    else { console.log('This round is a tie');
+    else { mainDiv.textContent = 'This round is a tie';
     }
     }
     
 
-/*
-Your game will play 5 rounds. You will write a function named playGame that calls playRound to play 5 rounds, 
-keeps track of the scores and declares a winner at the end.
 
-Create a new function named playGame.
-Move your playRound function and score variables so that they’re declared inside of the new playGame function
-Play 5 rounds by calling playRound 5 times.
-Hint: When you assign a function call to a variable, the return value of that function is assigned to the variable. 
-Accessing the variable afterward will only provide the assigned value; it doesn’t recall the function. You need to 
-recall the choice functions to get new choices for each round.
-Re-work your previous functions or create more helper functions if necessary. Specifically, you may want to change 
-the return values to something more useful.
-If you already know about loops, you can use them. If not, don’t worry! Loops will be covered in the next lesson.
-
-Create a new function named playGame
-Place playRound and score variables inside playGame
-Play 5 rounds by calling playRound 5 times
-Recall the choice functions to get new choices for each round
-Compare computer and human scores
-If computer score is greater than human score, declare computer the winner
-If human score is greater than computer score, declare human the winner
-*/
 const mainDiv = document.querySelector("div");
 
     function Score() {
             if (humanScore > computerScore) {
-        console.log('The human wins!');
+        mainDiv.textContent = 'The human wins!';
     }
     else if (computerScore > humanScore) {
-        console.log('The computer wins!');
+        mainDiv.textContent = 'The computer wins!';
     }
     else {
-        console.log('It is a tie')}
+        mainDiv.textContent = 'It is a tie';}
     } 
 
 function playGame() {
